@@ -33,7 +33,7 @@ run
 
 ### Then run following on command line:
 - cd ~
-- git clone https://github.com/JR-Y/tempLogger.git
+- git clone https://github.com/JR-Y/tempLoggerSensor.git
 - cd tempLoggerSensor
 - sudo apt-get install build-essential python-dev python-openssl
 --------------------------------------------------------------------
