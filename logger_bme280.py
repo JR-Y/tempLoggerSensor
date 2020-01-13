@@ -26,26 +26,26 @@ while True:
         #print(data.temperature)
         #print(data.pressure)
         #print(data.humidity)
-        print(data)
-        print(data2)
+        #print(data)
+        #print(data2)
 
         if data is not None:
                 with open('data_bme280.json', 'w', encoding='utf-8') as f:
                         dataobj = {}
                         #Sensor in
                         dataIn = {}
-                        dataIn['id'] = str(data.id)
-                        dataIn['timestamp'] = str(data.timestamp)#data.timestamp.strftime('%H:%M')
-                        dataIn['temperature'] = data.temperature
-                        dataIn['pressure'] = data.pressure
-                        dataIn['humidity'] = data.humidity
+                        dataIn['id'] = str(data2.id)
+                        dataIn['timestamp'] = str(data2.timestamp)#data.timestamp.strftime('%H:%M')
+                        dataIn['temperature'] = data2.temperature
+                        dataIn['pressure'] = data2.pressure
+                        dataIn['humidity'] = data2.humidity
                         #Sensor out
                         dataOut = {}
-                        dataOut['id'] = str(data2.id)
-                        dataOut['timestamp'] = str(data2.timestamp)#data.timestamp.strftime('%H:%M')
-                        dataOut['temperature'] = data2.temperature
-                        dataOut['pressure'] = data2.pressure
-                        dataOut['humidity'] = data2.humidity
+                        dataOut['id'] = str(data.id)
+                        dataOut['timestamp'] = str(data.timestamp)#data.timestamp.strftime('%H:%M')
+                        dataOut['temperature'] = data.temperature
+                        dataOut['pressure'] = data.pressure
+                        dataOut['humidity'] = data.humidity
                         
                         dataobj['sensorIn'] = dataIn
                         dataobj['sensorOut'] = dataOut
@@ -54,5 +54,5 @@ while True:
         else:
                 print("Failed to retrieve data from humidity sensor")
 
-        time.sleep(0.5)
+        time.sleep(15)
 

@@ -8,7 +8,17 @@ If required you can make many of these with different IP's & integrate them to y
 
 ## Installation
 
-Added BME280_still testing
+Added BME280 still testing
+https://www.instructables.com/id/Raspberry-PI-Multiple-I2c-Devices/
+https://pypi.org/project/RPi.bme280/
+
+
+sudo apt-get install i2c-tools python-pip
+sudo pip3 install RPi.bme280
+
+
+
+
 
 ### Requirements
 - A router that allows you to assign static local IP's to devices
@@ -48,7 +58,10 @@ or run this `#Not tested`
 --------------------------------------------------------------------
 - cd ~/tempLoggerSensor
 - npm install
+//for DHT
 - pm2 start logger.py --interpreter python3
+//for BME280
+- pm2 start logger_bme280.py --interpreter python3
 - pm2 start index.js
 - pm2 save
 - pm2 startup
