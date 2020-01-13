@@ -8,6 +8,8 @@ If required you can make many of these with different IP's & integrate them to y
 
 ## Installation
 
+Added BME280_still testing
+
 ### Requirements
 - A router that allows you to assign static local IP's to devices
 - A raspberry pi connected to that network
