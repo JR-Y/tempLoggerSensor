@@ -36,17 +36,17 @@ while True:
                         #Sensor in
                         dataIn = {}
                         dataIn['name'] = "sensorIn"
-                        dataIn['temp'] = data2.temperature
-                        dataIn['pres'] = data2.pressure
-                        dataIn['hum'] = data2.humidity
+                        dataIn['temp'] = '{:.2f}'.format(data2.temperature)
+                        dataIn['pres'] = '{:.2f}'.format(data2.pressure)
+                        dataIn['hum'] = '{:.2f}'.format(data2.humidity)
                         #Sensor out
                         dataOut = {}
                         dataOut['name'] = "sensorOut"
-                        dataOut['temp'] = data.temperature
-                        dataOut['pres'] = data.pressure
-                        dataOut['hum'] = data.humidity
+                        dataOut['temp'] = '{:.2f}'.format(data.temperature)
+                        dataOut['pres'] = '{:.2f}'.format(data.pressure)
+                        dataOut['hum'] = '{:.2f}'.format(data.humidity)
                         
-                        dataobj['ts'] = date.today().isoformat()
+                        dataobj['ts'] = datetime.datetime.now().isoformat()
                         dataobj['sensors'] = [dataIn, dataOut]
                         json.dump(dataobj, f, ensure_ascii=False, indent=4)
                         #print(dataW)
