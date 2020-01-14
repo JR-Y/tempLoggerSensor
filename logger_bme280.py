@@ -46,7 +46,7 @@ while True:
                         dataOut['pres'] = '{:.2f}'.format(data.pressure)
                         dataOut['hum'] = '{:.2f}'.format(data.humidity)
                         
-                        dataobj['ts'] = datetime.datetime.now().isoformat()
+                        dataobj['ts'] = datetime.now().isoformat()
                         dataobj['sensors'] = [dataIn, dataOut]
                         json.dump(dataobj, f, ensure_ascii=False, indent=4)
                         #print(dataW)
