@@ -2,6 +2,7 @@ import smbus2
 import bme280
 import json
 import time
+from datetime import date
 
 port = 1
 port2 = 4
@@ -34,21 +35,19 @@ while True:
                         dataobj = {}
                         #Sensor in
                         dataIn = {}
-                        dataIn['id'] = str(data2.id)
-                        dataIn['timestamp'] = str(data2.timestamp)#data.timestamp.strftime('%H:%M')
-                        dataIn['temperature'] = data2.temperature
-                        dataIn['pressure'] = data2.pressure
-                        dataIn['humidity'] = data2.humidity
+                        dataIn['name'] = "sensorIn"
+                        dataIn['temp'] = data2.temperature
+                        dataIn['pres'] = data2.pressure
+                        dataIn['hum'] = data2.humidity
                         #Sensor out
                         dataOut = {}
-                        dataOut['id'] = str(data.id)
-                        dataOut['timestamp'] = str(data.timestamp)#data.timestamp.strftime('%H:%M')
-                        dataOut['temperature'] = data.temperature
-                        dataOut['pressure'] = data.pressure
-                        dataOut['humidity'] = data.humidity
+                        dataOut['name'] = "sensorOut"
+                        dataOut['temp'] = data.temperature
+                        dataOut['pres'] = data.pressure
+                        dataOut['hum'] = data.humidity
                         
-                        dataobj['sensorIn'] = dataIn
-                        dataobj['sensorOut'] = dataOut
+                        dataobj['ts'] = date.today().isoformat()
+                        dataobj['sensors'] = [dataIn, dataOut]
                         json.dump(dataobj, f, ensure_ascii=False, indent=4)
                         #print(dataW)
         else:
