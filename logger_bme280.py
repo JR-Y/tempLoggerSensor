@@ -35,13 +35,13 @@ while True:
                         dataobj = {}
                         #Sensor in
                         dataIn = {}
-                        dataIn['name'] = "sensorIn"
+                        dataIn['name'] = "In"
                         dataIn['temp'] = '{:.2f}'.format(data2.temperature)
                         dataIn['pres'] = '{:.2f}'.format(data2.pressure)
                         dataIn['hum'] = '{:.2f}'.format(data2.humidity)
                         #Sensor out
                         dataOut = {}
-                        dataOut['name'] = "sensorOut"
+                        dataOut['name'] = "Out"
                         dataOut['temp'] = '{:.2f}'.format(data.temperature)
                         dataOut['pres'] = '{:.2f}'.format(data.pressure)
                         dataOut['hum'] = '{:.2f}'.format(data.humidity)
